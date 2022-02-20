@@ -22,11 +22,22 @@ public class Questao03 {
 	 */
 	public static void main(String[] args) {
 
-		// Entrada de informação:
+		// Entrada de informação
 		System.out.println("Digite uma palavra:");
 		Scanner in = new Scanner(System.in);
 		String palavra = in.nextLine();
+		
+		//Verifica quantidade pares de anagramas
+		int quantidade = qtdParesAnagramas(palavra);
+		
+		// Exibe resultado	
+		System.out.println("Quantidade de pares: ");
+		System.out.println(quantidade);
 
+	}
+	
+	public static int qtdParesAnagramas(String palavra) {
+		
 		/* Palavra convertida para caixa baixa para não dar diferença na comparação de
 		 * pares 
 		*/ 
@@ -81,9 +92,6 @@ public class Questao03 {
 			}
 
 		}
-
-		System.out.println("Quantidade de pares: ");
-		System.out.println(quantidade);
-
+		return quantidade;
 	}
 }

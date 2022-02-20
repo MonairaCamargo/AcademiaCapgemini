@@ -20,19 +20,34 @@ public class Questao02 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		// Quantidade de caracteres para uma senha forte
-		int qtdSenhaForte = 6;
-
 		// Coleta entrada da senha:
 		System.out.println("Senha:");
 		String senha = in.nextLine();
 
-		// A senha tem que ser uma senha forte e com minímo de caractere permitido
-		int var = qtdSenhaForte - senha.length();
+		// Verifica senha
+		int var = verificaSenha(senha);
+		
+		// Verifica o resultado
 		if (var <= 0) {
 			System.out.println("Já possui a quantidade de caracteres para uma senha forte");
 		} else {
 			System.out.println(var);
 		}
+	}
+	
+	/**
+	 * A senha tem que ser uma senha forte e com minímo de caractere permitido
+	 * 
+	 * @param senha
+	 * @return
+	 */
+	public static int verificaSenha(String senha) {
+		
+		// Quantidade de caracteres para uma senha forte
+		int qtdSenhaForte = 6;
+		
+		int var = qtdSenhaForte - senha.length();
+		
+		return var;
 	}
 }
